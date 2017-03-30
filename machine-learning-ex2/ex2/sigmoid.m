@@ -9,12 +9,7 @@ g = zeros(size(z));
 % Instructions: Compute the sigmoid of each value of z (z can be a matrix,
 %               vector or scalar).
 
-i = 1;
-zArr = z(:);
-while(i <= size(zArr)(1))
-  g(i) = 1 / (1 + e^-z(i));
-  i++;
-endwhile;
+g = 1 ./ (1 + exp(-z));
 
 % =============================================================
 
