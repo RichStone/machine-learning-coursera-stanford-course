@@ -21,13 +21,20 @@ grad = zeros(size(theta));
 
 
 
+%cost
+h = X * theta;
+error_sqr = (h - y).^2;
+J = 1/(2 * m) * sum(error_sqr);
 
+%cost regulatization
+regularization = sum(theta(2:end).^2);
+regularization = regularization * (lambda /(2 * m));
+J = J + regularization;
 
-
-
-
-
-
+%gradient regularization
+gradReg = (lambda / m) .* theta;
+gradReg(1) = 0;
+grad = (1 / m) .* X' * (h - y) + gradReg;
 
 
 % =========================================================================
