@@ -17,9 +17,9 @@ sim = 0;
 %
 
 
-squareSum = sum((x1 - x2).^2);
-dividedBySigma = squareSum / (2 * sigma^2);
-sim = exp(-dividedBySigma);
+sim = exp(-(sum) )
+
+
 
 % =============================================================
     
