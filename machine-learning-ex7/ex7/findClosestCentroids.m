@@ -29,8 +29,8 @@ for i = 1:m
     for j = 1:K
         distanceVector(1, j) = sqrt(sum((X(i, :) - centroids(j, :)).^2));
     end
-    [d, d_idx] = min(distanceVector);
-    idx(i, 1) = d_idx;
+    [d, shortest] = min(distanceVector);
+    idx(i, 1) = shortest;
 end
 
 
